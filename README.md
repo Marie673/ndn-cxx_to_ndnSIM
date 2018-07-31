@@ -14,3 +14,7 @@ $ cd ndnSIM/ns-3/
 $ ./waf
 $ ./build/scratch/ndn-cxx-simple
 ```
+
+## 詳細
+https://qiita.com/wawawa/items/eab935c34b3fef64e39a <br/>
+上記リンク先を参照
