@@ -18,17 +18,6 @@ public:
     // , m_faceProducer(m_face.getIoService())
     , m_scheduler(m_face.getIoService())
   {
-    // // register prefix and set interest filter on producer face
-    // m_faceProducer.setInterestFilter("/hello", std::bind(&RealApp::respondToAnyInterest, this, _2),
-    //                                  std::bind([]{}), std::bind([]{}));
-
-    // // use scheduler to send interest later on consumer face
-    // m_scheduler.scheduleEvent(ndn::time::seconds(2), [this] {
-    //     m_faceConsumer.expressInterest(ndn::Interest("/hello/world"),
-    //                                    std::bind([] { std::cout << "Hello!" << std::endl; }),
-    //                                    std::bind([] { std::cout << "NACK!" << std::endl; }),
-    //                                    std::bind([] { std::cout << "Bye!.." << std::endl; }));
-    //   });
   }
 
   void
@@ -77,19 +66,9 @@ private:
 		m_face.shutdown();
 	}
 
-  // void
-  // respondToAnyInterest(const ndn::Interest& interest)
-  // {
-  //   auto data = std::make_shared<ndn::Data>(interest.getName());
-  //   m_keyChain.sign(*data);
-  //   m_faceProducer.put(*data);
-  // }
-
 private:
   ndn::KeyChain& m_keyChain;
   ndn::Face m_face;
-  // ndn::Face m_faceConsumer;
-  // ndn::Face m_faceProducer;
   ndn::Scheduler m_scheduler;
 };
 

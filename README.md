@@ -1,5 +1,9 @@
 # ndn-cxx_to_ndnSIM
 
+## About
+https://named-data.net/doc/ndn-cxx/current/examples.html
+にあるndn-cxxのサンプルコードをndnSIMに移植してみた
+
 ## 使い方
 フォルダ"scratch/"下のcppファイルを"ndnSIM/ns-3/scratch/"下にコピーする <br/>
 フォルダ"samplapps/"を"ndnSIM/ns-3/build/ns3/"下にコピーする <br/>
