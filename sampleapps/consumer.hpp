@@ -27,10 +27,9 @@ public:
   	interest.setMustBeFresh(true);
 
   	m_face.expressInterest(interest,
-                          std::bind([] { std::cout << "Hello!" << std::endl; }),
-                          std::bind([] { std::cout << "NACK!" << std::endl; }),
-                          std::bind([] { std::cout << "Bye!.." << std::endl; }));
-
+                          std::bind(&CustomConsumer::onData, this, _1, _2),
+                          std::bind(&CustomConsumer::onNack, this, _1, _2),
+                          std::bind(&CustomConsumer::onTimeout, this, _1));
   	std::cout << "Sending: " << interest << std::endl;
 
     m_face.processEvents(); // ok (will not block and do nothing)
